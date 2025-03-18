@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <update version="1.0">
+      <file name="blood_knight.xml" url="https://raw.githubusercontent.com/aleyunsl/Aetheria/refs/heads/main/blood_knight.xml" />
+    </update>
+  </info>
+
+  <!-- Blood Knight Class -->
+  <element name="Blood Knight" type="Class" source="Homebrew" id="ID_CUSTOM_CLASS_BLOOD_KNIGHT">
+    <description>
+      <p>The Blood Knight is a warrior who channels the forbidden power of hemocraft – sacrificing a portion of their own life force to fuel devastating combat abilities. Through ancient blood rituals, you gain a pool of hemocraft dice (starting as d4 and increasing with level) that empower unique abilities such as Life Transfer, Rend, and Adrenaline Surge.</p>
+      <p class="indent">When creating a Blood Knight, your Constitution is paramount, as it not only determines your vitality but also the size of your hemocraft pool. Your training in blood magic transforms you into a relentless combatant whose very blood becomes a weapon.</p>
+    </description>
+    <setters>
+      <set name="hit dice">d12</set>
+      <set name="hit points at 1st level">12 + Constitution modifier</set>
+      <set name="hit points at higher levels">1d12 (or 7) + Constitution modifier per level</set>
+      <set name="armor">All armor, shields</set>
+      <set name="weapons">Simple weapons, martial weapons</set>
+      <set name="saving throws">Constitution, Strength</set>
+      <set name="skills">Choose two from Acrobatics, Athletics, Arcana, Insight, Intimidation, Perception</set>
+    </setters>
+    <rules>
+      <!-- Hemocraft: You gain a pool of hemocraft dice equal to your level + Constitution modifier. -->
+      <grant type="Class Feature" id="ID_CUSTOM_FEATURE_HEMOCRAFT" level="1" />
+      <!-- Hemomantic Restoration: Sacrifice vitality to restore your hemocraft dice. -->
+      <grant type="Class Feature" id="ID_CUSTOM_FEATURE_HEMOMANTIC_RESTORATION" level="1" />
+      <!-- Fighting Style: Choose a fighting style at 2nd level. -->
+      <grant type="Class Feature" id="ID_CUSTOM_FEATURE_FIGHTING_STYLE" level="2" />
+      <!-- Sanguine Order: At 3rd level, choose an Order (subclass) – see subclass selection below. -->
+      <select type="Subclass" name="Sanguine Order" supports="Blood Knight" number="1" />
+      <!-- Additional class features -->
+      <grant type="Class Feature" id="ID_CUSTOM_FEATURE_EXTRA_ATTACK" level="5" />
+      <grant type="Class Feature" id="ID_CUSTOM_FEATURE_EXTRACT_BLOOD" level="6" />
+      <!-- (Further features such as Ability Score Improvements, Order Features, etc. can be added as needed.) -->
+    </rules>
+    <sheet>
+      <description>
+        Blood Knights sacrifice their own vitality to channel hemomantic power. Their blood becomes both a weapon and a wellspring of magical might.
+      </description>
+    </sheet>
+  </element>
+
+  <!-- Order of the Huntsman Subclass for Blood Knight -->
+  <element name="Order of the Huntsman" type="Subclass" source="Homebrew" id="ID_CUSTOM_SUBCLASS_BLOOD_KNIGHT_ORDER_HUNTSMAN">
+    <supports>Blood Knight</supports>
+    <description>
+      <p>The Order of the Huntsman is reserved for Blood Knights who embrace the predator within. Originally formed by vampire and lycanthrope hunters, these warriors use their dark hemocraft to track, hunt, and eliminate their foes with ruthless efficiency.</p>
+      <p class="indent"><strong>Favored Prey:</strong> At 3rd level, choose one creature type (e.g., aberrations, beasts, celestials, dragons, fey, fiends, giants, humanoids, monstrosities, or undead) as your favored prey. You gain advantage on tracking them and deal additional damage equal to your proficiency bonus on attacks against them.</p>
+      <p class="indent"><strong>Hunter's Speed:</strong> Your movement speed increases by 5 feet, and you gain climbing and swimming speeds equal to your walking speed.</p>
+      <p class="indent"><strong>Hunter's Will:</strong> You gain proficiency in Wisdom saving throws and advantage on saving throws against being charmed or frightened.</p>
+      <p class="indent"><strong>Order Feature:</strong> Additional features specific to the Order of the Huntsman are granted at higher levels, further enhancing your tracking abilities and combat prowess.</p>
+    </description>
+    <rules>
+      <grant type="Subclass Feature" id="ID_CUSTOM_FEATURE_FAVORED_PREY" level="3" />
+      <grant type="Subclass Feature" id="ID_CUSTOM_FEATURE_HUNTERS_SPEED" level="3" />
+      <grant type="Subclass Feature" id="ID_CUSTOM_FEATURE_HUNTERS_WILL" level="3" />
+      <grant type="Subclass Feature" id="ID_CUSTOM_FEATURE_ORDER_FEATURE" level="7" />
+      <!-- Additional subclass features can be defined at later levels -->
+    </rules>
+    <sheet>
+      <description>
+        Members of the Order of the Huntsman are feared predators who leverage their hemocraft to become unmatched trackers and killers. They embody the ruthless nature of the hunt.
+      </description>
+    </sheet>
+  </element>
+</elements>
