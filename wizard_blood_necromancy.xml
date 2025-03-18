@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+  <info>
+    <update version="0.0.1">
+      <file name="wizard-blood-necromancy.xml" url="https://yourhosting.com/wizard-blood-necromancy.xml" />
+    </update>
+  </info>
+  
+  <element name="Blood Necromancer" type="Arcane Tradition" source="Aurora: Homebrew" id="ID_CUSTOM_AURORA_ARCANE_TRADITION_BLOOD_NECROMANCER">
+    <supports>Wizard,Arcane Tradition</supports>
+    <description>
+      <p>The Blood Necromancer tradition channels forbidden blood magic to transform your magical recovery and combat abilities.</p>
+      <p class="indent"><strong>Sacrificial Recovery (Level 1):</strong> Replace standard Arcane Recovery. After a short rest, recover expended spell slots by converting hit dice—at the cost of necrotic damage (2d6 for a 1st-level slot, 3d6 for a 2nd-level slot, etc.).</p>
+      <p class="indent"><strong>The Cycle of Blood and Death (Level 2):</strong> When you kill a creature with a Necromancy spell, necrotic energy lashes out to deal damage equal to your proficiency bonus to another creature within 60 feet. Alternatively, if you kill a creature with a Hemomancy spell, a friendly creature within 60 feet regains hit points equal to twice your proficiency bonus. Also, add your Intelligence modifier (minimum +1) to spells of 1st level or higher.</p>
+      <p class="indent"><strong>Bloodletting Curse (Level 2):</strong> As a bonus action, curse a creature within 60 feet for 1 minute. On its turn, the first time it takes necrotic damage, it suffers an extra 2d4 necrotic damage. (At higher levels, additional uses and increased damage occur.)</p>
+      <p class="indent"><strong>Sanguine Echo (Level 6):</strong> When you deal necrotic damage with a spell, you can use your reaction to add 1d6 per spell level to the damage. This bonus damage ignores necrotic resistance but not immunity. You can use this feature a number of times equal to your Intelligence modifier (minimum once), regaining all uses after a long rest.</p>
+    </description>
+    <sheet display="false">
+      <description>The Blood Necromancer tradition reshapes your necromantic abilities through forbidden blood magic.</description>
+    </sheet>
+    <rules>
+      <grant type="Arcane Tradition Feature" id="ID_CUSTOM_FEATURE_SACRIFICIAL_RECOVERY" level="2" />
+      <grant type="Arcane Tradition Feature" id="ID_CUSTOM_FEATURE_CYCLE_OF_BLOOD_AND_DEATH" level="2" />
+      <grant type="Arcane Tradition Feature" id="ID_CUSTOM_FEATURE_BLOODLETTING_CURSE" level="2" />
+      <grant type="Arcane Tradition Feature" id="ID_CUSTOM_FEATURE_SANGUINE_ECHO" level="6" />
+    </rules>
+  </element>
+</elements>
